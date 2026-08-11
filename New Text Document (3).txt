@@ -1,0 +1,62 @@
+ansible tower use
+z/os core package  --> tso command library
+output is json
+issue command to mf and waiting for answer
+ansible reeive the answerand process the output --> send notification on email or something else.
+
+Json format  { Key : value }
+
+software development standard
+
+github.kyndryl.net   --> page cyndryl certification
+	-ansible_os390_sslcert_scan
+
+your-zdt-instance-ip-address = (Zdt 3 instance) IP Address: 20.62.249.27
+zos pass: XXXX@hun
+connect to zdt ssh --> 2022
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/adcdc3/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+
+/usr/bin/ssh-copy-id: ERROR: ssh: Could not resolve hostname s0w1_skm-zos03: Temporary failure in name resolution
+
+
+Ezt a lépést holnap a belépésnél meg kell csinálni. Utána csináld meg a Change the ansible_user variable- lépést.
+Activating the Virtual Environment:
+
+On Linux:
+
+source mms-venv/bin/activate
+
+login
+adcdc3@74.235.198.222 -p 22
+
+Létrehoz egy üres  .yaml file-t amiből majd meghivható az Ansible
+nano myplaybook.yaml
+
+adcdc3@kyn-skm-lnx01:~/mms-ansible-handson-code$ source mms-venv/bin/activate
+
+ansible-playbook -i inventory myplaybook.yaml -e "nodes=zdtZos"
+
+(mms-venv) adcdc3@kyn-skm-lnx01:~/mms-ansible-handson-code$ dirs
+~/mms-ansible-handson-code
+(mms-venv) adcdc3@kyn-skm-lnx01:~/mms-ansible-handson-code$ printf
+printf: usage: printf [-v var] format [arguments]
+(mms-venv) adcdc3@kyn-skm-lnx01:~/mms-ansible-handson-code$ dir
+README.md                ibm_zos_dataset_create.yml  ibm_zos_raw_idcams_delete.yml  mms_zos_command.yml    myplaybook.yaml       zdt_fetch_parmlib.yml       zdt_permit_test_group.yml
+ansible.cfg              ibm_zos_dataset_delete.yml  ibm_zos_tso_command.yml        mms_zos_ping.yml       parmlib               zdt_fix_adcd_automount.yml  zdt_restate_users.yml
+ansible.log              ibm_zos_fetch.yml           ibm_zos_tso_racf_permit.yml    mms_zos_raw.yml        requirements.txt      zdt_fix_racf.yml
+collections              ibm_zos_gather_facts.yml    inventory                      mms_zos_resetpass.yml  requirements.yml      zdt_fix_sshd_config.yml
+group_vars               ibm_zos_lineinfile.yml      lnx_create_users.yml           mms_zos_roaudit.yml    wa_gather_facts.yml   zdt_fix_zoautil.yml
+ibm_zos_blockinfile.yml  ibm_zos_operator.yml        lnx_create_users_sshkey.yml    mms_zos_shell.yml      zdt_create_users.yml  zdt_fix_zoautil_link.yml
+ibm_zos_copy.yml         ibm_zos_ping.yml            mms-venv                       mms_zos_usrlist.yml    zdt_delete_users.yml  zdt_irr_irrdbu.yml
+(mms-venv) adcdc3@kyn-skm-lnx01:~/mms-ansible-handson-code$ dir myplaybook.yaml
+myplaybook.yaml
+(mms-venv) adcdc3@kyn-skm-lnx01:~/mms-ansible-handson-code$ myplaybook.yaml
+myplaybook.yaml: command not found
+(mms-venv) adcdc3@kyn-skm-lnx01:~/mms-ansible-handson-code$ cd myplaybook.yaml
+-bash: cd: myplaybook.yaml: Not a directory
+(mms-venv) adcdc3@kyn-skm-lnx01:~/mms-ansible-handson-code$ sudo myplaybook.yaml
+[sudo] password for adcdc3:
+adcdc3 is not in the sudoers file.
+(mms-venv) adcdc3@kyn-skm-lnx01:~/mms-ansible-handson-code$ nano myplaybook.yaml
+(mms-venv) adcdc3@kyn-skm-lnx01:~/mms-ansible-handson-code$
